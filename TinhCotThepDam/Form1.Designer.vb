@@ -69,6 +69,7 @@ Partial Class frmMain
         Me.txtBeRong.Name = "txtBeRong"
         Me.txtBeRong.Size = New System.Drawing.Size(74, 21)
         Me.txtBeRong.TabIndex = 1
+        Me.txtBeRong.Text = "250"
         '
         'Label1
         '
@@ -97,6 +98,7 @@ Partial Class frmMain
         Me.txtChieuCao.Name = "txtChieuCao"
         Me.txtChieuCao.Size = New System.Drawing.Size(74, 21)
         Me.txtChieuCao.TabIndex = 4
+        Me.txtChieuCao.Text = "400"
         '
         'btnExit
         '
@@ -125,6 +127,7 @@ Partial Class frmMain
         Me.txtCotThep.Name = "txtCotThep"
         Me.txtCotThep.Size = New System.Drawing.Size(74, 21)
         Me.txtCotThep.TabIndex = 9
+        Me.txtCotThep.Text = "CB400-V"
         '
         'Label4
         '
@@ -143,6 +146,7 @@ Partial Class frmMain
         Me.txtBeTong.Name = "txtBeTong"
         Me.txtBeTong.Size = New System.Drawing.Size(74, 21)
         Me.txtBeTong.TabIndex = 7
+        Me.txtBeTong.Text = "B20"
         '
         'Label5
         '
@@ -161,6 +165,7 @@ Partial Class frmMain
         Me.txtAPhay.Name = "txtAPhay"
         Me.txtAPhay.Size = New System.Drawing.Size(74, 21)
         Me.txtAPhay.TabIndex = 13
+        Me.txtAPhay.Text = "30"
         '
         'Label6
         '
@@ -179,6 +184,7 @@ Partial Class frmMain
         Me.txtA.Name = "txtA"
         Me.txtA.Size = New System.Drawing.Size(74, 21)
         Me.txtA.TabIndex = 11
+        Me.txtA.Text = "30"
         '
         'Label7
         '
@@ -198,6 +204,7 @@ Partial Class frmMain
         Me.txtM.Name = "txtM"
         Me.txtM.Size = New System.Drawing.Size(74, 21)
         Me.txtM.TabIndex = 15
+        Me.txtM.Text = "500"
         '
         'GroupBox1
         '
@@ -276,9 +283,9 @@ Partial Class frmMain
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.PictureBox1)
-        Me.GroupBox3.Location = New System.Drawing.Point(219, 19)
+        Me.GroupBox3.Location = New System.Drawing.Point(219, 3)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(219, 124)
+        Me.GroupBox3.Size = New System.Drawing.Size(219, 146)
         Me.GroupBox3.TabIndex = 19
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Hình minh họa"
