@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmMain
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnTinhToan = New System.Windows.Forms.Button()
         Me.txtBeRong = New System.Windows.Forms.TextBox()
@@ -29,9 +29,7 @@ Partial Class frmMain
         Me.txtChieuCao = New System.Windows.Forms.TextBox()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtCotThep = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtBeTong = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtAPhay = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -39,6 +37,8 @@ Partial Class frmMain
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtM = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbxCotThep = New System.Windows.Forms.ComboBox()
+        Me.cbxBeTong = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtAs = New System.Windows.Forms.TextBox()
@@ -84,7 +84,7 @@ Partial Class frmMain
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 66)
+        Me.Label2.Location = New System.Drawing.Point(10, 69)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 15)
@@ -113,40 +113,22 @@ Partial Class frmMain
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(7, 125)
+        Me.Label3.Location = New System.Drawing.Point(7, 131)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 15)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Cốt thép"
         '
-        'txtCotThep
-        '
-        Me.txtCotThep.Location = New System.Drawing.Point(104, 125)
-        Me.txtCotThep.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.txtCotThep.Name = "txtCotThep"
-        Me.txtCotThep.Size = New System.Drawing.Size(74, 21)
-        Me.txtCotThep.TabIndex = 9
-        Me.txtCotThep.Text = "CB400-V"
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(7, 95)
+        Me.Label4.Location = New System.Drawing.Point(10, 98)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 15)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Bê tông"
-        '
-        'txtBeTong
-        '
-        Me.txtBeTong.Location = New System.Drawing.Point(104, 95)
-        Me.txtBeTong.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.txtBeTong.Name = "txtBeTong"
-        Me.txtBeTong.Size = New System.Drawing.Size(74, 21)
-        Me.txtBeTong.TabIndex = 7
-        Me.txtBeTong.Text = "B20"
         '
         'Label5
         '
@@ -208,6 +190,8 @@ Partial Class frmMain
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbxCotThep)
+        Me.GroupBox1.Controls.Add(Me.cbxBeTong)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtBeRong)
@@ -216,11 +200,9 @@ Partial Class frmMain
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtAPhay)
-        Me.GroupBox1.Controls.Add(Me.txtBeTong)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtA)
-        Me.GroupBox1.Controls.Add(Me.txtCotThep)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(11, 3)
         Me.GroupBox1.Name = "GroupBox1"
@@ -228,6 +210,24 @@ Partial Class frmMain
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Thông số đầu vào"
+        '
+        'cbxCotThep
+        '
+        Me.cbxCotThep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxCotThep.FormattingEnabled = True
+        Me.cbxCotThep.Location = New System.Drawing.Point(104, 126)
+        Me.cbxCotThep.Name = "cbxCotThep"
+        Me.cbxCotThep.Size = New System.Drawing.Size(74, 23)
+        Me.cbxCotThep.TabIndex = 18
+        '
+        'cbxBeTong
+        '
+        Me.cbxBeTong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxBeTong.FormattingEnabled = True
+        Me.cbxBeTong.Location = New System.Drawing.Point(104, 95)
+        Me.cbxBeTong.Name = "cbxBeTong"
+        Me.cbxBeTong.Size = New System.Drawing.Size(74, 23)
+        Me.cbxBeTong.TabIndex = 17
         '
         'GroupBox2
         '
@@ -296,7 +296,7 @@ Partial Class frmMain
         Me.PictureBox1.Location = New System.Drawing.Point(65, 20)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(88, 98)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -335,9 +335,7 @@ Partial Class frmMain
     Friend WithEvents txtChieuCao As TextBox
     Friend WithEvents btnExit As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtCotThep As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtBeTong As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtAPhay As TextBox
     Friend WithEvents Label6 As Label
@@ -352,4 +350,6 @@ Partial Class frmMain
     Friend WithEvents txtAsPhay As TextBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents cbxCotThep As ComboBox
+    Friend WithEvents cbxBeTong As ComboBox
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports System.Globalization
+Imports System.Security.Cryptography
 
 Public Class frmMain
 
@@ -45,84 +46,129 @@ Public Class frmMain
             Exit Sub
         End If
 
-        Betong = txtBeTong.Text
-        cotthep = txtCotThep.Text
-        Dim ho As Double = ChieuCao - a
-        Dim Rb, Rs, Es, Rsc, pxiR, alphaR As Double
+        Betong = cbxBeTong.SelectedItem
+        cotthep = cbxCotThep.SelectedItem
 
-        Select Case Betong
-            Case "B10"
-                Rb = 11.5
-            Case "B15"
-                Rb = 14.5
-            Case "B20"
-                Rb = 11.5
-            Case "B25"
-                Rb = 14.5
-            Case "B30"
-                Rb = 17.5
-            Case "B35"
-                Rb = 20.0
-            Case "B40"
-                Rb = 22.0
-            Case Else
-                MsgBox("Kiểm tra lại dữ liệu đầu vào !!!")
-                Exit Sub
-        End Select
-
-        'If Betong = "B20" Then
-        '    Rb = 11.5
-        'End If
-        'If cotthep = "CB400-V" Then
-        '    Rs = 350
-        '    Es = 200000
-        '    Rsc = 350
-
-        'End If
-        Select Case cotthep
-            Case "CB400-V"
-                Rs = 350
-                Es = 200000
-                Rsc = 350
-            Case "CB400-B"
-                Rs = 360
-                Es = 200000
-                Rsc = 360
-            Case "CB500-V"
-                Rs = 490
-                Es = 200000
-                Rsc = 490
-            Case "CB500-B"
-                Rs = 510
-                Es = 200000
-                Rsc = 510
-            Case Else
-                MsgBox("Kiểm tra lại dữ liệu đầu vào !!!")
-                Exit Sub
-        End Select
-        pxiR = 0.8 / (1 + Rs / (0.0035 * Es))
-        alphaR = pxiR * (1 - 0.5 * pxiR)
-
-        Dim alphaM As Double = M / (Rb * BeRong * ho ^ 2)
         Dim As1, AsPhay As Double
-        If alphaM <= alphaR Then
-            Dim pxi As Double = 1 - Math.Sqrt(1 - 2 * alphaM)
-            As1 = pxi * Rb * ho * BeRong / Rs
-            AsPhay = 0
-        Else
-            AsPhay = (M - alphaR * Rb * BeRong * ho ^ 2) / (Rsc * (ho - aPhay))
-            As1 = (pxiR * Rb * BeRong * ho + Rsc * aPhay) / Rs
-        End If
+        TinhThep(BeRong, ChieuCao, Betong, cotthep, a, aPhay, M, As1, AsPhay)
         txtAs.Text = Math.Round(As1 / 100, 2)
         txtAsPhay.Text = Math.Round(AsPhay / 100, 2)
 
 
+    End Sub
 
+    Sub TinhThep(b As Double, h As Double, BeTong As String, CotThep As String, a As Double, aPhay As Double, M As Double,
+                 ByRef As1 As Double, ByRef AsPhay As Double)
+        Dim ho As Double = h - a
+        Dim Rb, Rs, Es, Rsc, pxiR, alphaR As Double
+
+        Rb = ReturnRb(BeTong)
+        Rs = ReturnRs(CotThep)
+        Es = ReturnEs(CotThep)
+        Rsc = ReturnRsc(CotThep)
+
+        pxiR = 0.8 / (1 + Rs / (0.0035 * Es))
+        alphaR = pxiR * (1 - 0.5 * pxiR)
+
+        Dim alphaM As Double = M / (Rb * b * ho ^ 2)
+
+        If alphaM <= alphaR Then
+            Dim pxi As Double = 1 - Math.Sqrt(1 - 2 * alphaM)
+            As1 = pxi * Rb * ho * b / Rs
+            AsPhay = 0
+        Else
+            AsPhay = (M - alphaR * Rb * b * ho ^ 2) / (Rsc * (ho - aPhay))
+            As1 = (pxiR * Rb * b * ho + Rsc * aPhay) / Rs
+        End If
+        txtAs.Text = Math.Round(As1 / 100, 2)
+        txtAsPhay.Text = Math.Round(AsPhay / 100, 2)
 
     End Sub
+
+    Function ReturnRb(BeTong As String) As Double
+        Dim Rb As Double
+        Select Case BeTong
+            Case "B20"
+                Rb = "11.5"
+            Case "B25"
+                Rb = "14.5"
+            Case "B30"
+                Rb = "17.5"
+            Case Else
+                Rb = 0
+        End Select
+        Return Rb
+    End Function
+
+    Function ReturnRs(CotThep As String) As Double
+        Dim Rs As Double
+        Select Case CotThep
+            Case "CB200-T"
+                Rs = 350
+            Case "CB300-V"
+                Rs = 360
+            Case "CB400-V"
+                Rs = 490
+            Case Else
+                Rs = 0
+        End Select
+        Return Rs
+    End Function
+
+    Function ReturnEs(CotThep As String) As Double
+        Dim Es As Double
+        Select Case CotThep
+            Case "CB200-T"
+                Es = 200000
+            Case "CB300-V"
+                Es = 200000
+            Case "CB400-V"
+                Es = 200000
+            Case Else
+                Es = 0
+        End Select
+        Return Es
+    End Function
+
+    Function ReturnRsc(CotThep As String) As Double
+        Dim Rsc As Double
+
+        Select Case CotThep
+            Case "CB200-T"
+                Rsc = 350
+            Case "CB300-V"
+                Rsc = 360
+            Case "CB400-V"
+                Rsc = 490
+            Case Else
+                Rsc = 0
+        End Select
+        ReturnRsc = Rsc
+    End Function
+
+
 
     Private Sub txtBeRong_TextChanged(sender As Object, e As EventArgs) Handles txtBeRong.TextChanged
         txtAs.Text = ""
         txtAsPhay.Text = ""
+    End Sub
+
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim DsBeTong As List(Of String) = New List(Of String)({"B20", "B25", "B30"})
+        Dim DsCotThep As List(Of String) = New List(Of String)({"CB240-T", "CB300-V", "CB400-V"})
+
+
+        For Each item As String In DsBeTong
+            cbxBeTong.Items.Add(item)
+        Next
+        For Each item As String In DsCotThep
+            cbxCotThep.Items.Add(item)
+        Next
+
+        cbxBeTong.SelectedIndex = 0
+        cbxCotThep.SelectedIndex = 0
+
+
+
     End Sub
 End Class
