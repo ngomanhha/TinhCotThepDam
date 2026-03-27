@@ -22,12 +22,12 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnTinhToan = New System.Windows.Forms.Button()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.txtBeRong = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtChieuCao = New System.Windows.Forms.TextBox()
-        Me.btnExit = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -45,26 +45,26 @@ Partial Class frmMain
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtAsPhay = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.lstBxMatCat = New System.Windows.Forms.ListBox()
+        Me.tsMain = New System.Windows.Forms.ToolStrip()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.tsRun = New System.Windows.Forms.ToolStripButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnXoa = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.tsMain.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnTinhToan
-        '
-        Me.btnTinhToan.Location = New System.Drawing.Point(136, 256)
-        Me.btnTinhToan.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.btnTinhToan.Name = "btnTinhToan"
-        Me.btnTinhToan.Size = New System.Drawing.Size(75, 25)
-        Me.btnTinhToan.TabIndex = 0
-        Me.btnTinhToan.Text = "Tính toán"
-        Me.btnTinhToan.UseVisualStyleBackColor = True
-        '
         'txtBeRong
         '
-        Me.txtBeRong.Location = New System.Drawing.Point(104, 36)
+        Me.txtBeRong.Location = New System.Drawing.Point(104, 53)
         Me.txtBeRong.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBeRong.Name = "txtBeRong"
         Me.txtBeRong.Size = New System.Drawing.Size(74, 21)
@@ -74,7 +74,7 @@ Partial Class frmMain
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 36)
+        Me.Label1.Location = New System.Drawing.Point(7, 53)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 15)
@@ -84,7 +84,7 @@ Partial Class frmMain
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(10, 69)
+        Me.Label2.Location = New System.Drawing.Point(10, 82)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 15)
@@ -93,27 +93,17 @@ Partial Class frmMain
         '
         'txtChieuCao
         '
-        Me.txtChieuCao.Location = New System.Drawing.Point(104, 66)
+        Me.txtChieuCao.Location = New System.Drawing.Point(104, 79)
         Me.txtChieuCao.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtChieuCao.Name = "txtChieuCao"
         Me.txtChieuCao.Size = New System.Drawing.Size(74, 21)
         Me.txtChieuCao.TabIndex = 4
         Me.txtChieuCao.Text = "400"
         '
-        'btnExit
-        '
-        Me.btnExit.Location = New System.Drawing.Point(219, 256)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(71, 25)
-        Me.btnExit.TabIndex = 6
-        Me.btnExit.Text = "Thoát"
-        Me.btnExit.UseVisualStyleBackColor = True
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(7, 131)
+        Me.Label3.Location = New System.Drawing.Point(7, 142)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 15)
@@ -123,7 +113,7 @@ Partial Class frmMain
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(10, 98)
+        Me.Label4.Location = New System.Drawing.Point(10, 109)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 15)
@@ -133,7 +123,7 @@ Partial Class frmMain
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(7, 185)
+        Me.Label5.Location = New System.Drawing.Point(7, 196)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(17, 15)
@@ -142,7 +132,7 @@ Partial Class frmMain
         '
         'txtAPhay
         '
-        Me.txtAPhay.Location = New System.Drawing.Point(104, 185)
+        Me.txtAPhay.Location = New System.Drawing.Point(104, 196)
         Me.txtAPhay.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtAPhay.Name = "txtAPhay"
         Me.txtAPhay.Size = New System.Drawing.Size(74, 21)
@@ -152,7 +142,7 @@ Partial Class frmMain
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(7, 155)
+        Me.Label6.Location = New System.Drawing.Point(7, 166)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(14, 15)
@@ -161,7 +151,7 @@ Partial Class frmMain
         '
         'txtA
         '
-        Me.txtA.Location = New System.Drawing.Point(104, 155)
+        Me.txtA.Location = New System.Drawing.Point(104, 166)
         Me.txtA.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtA.Name = "txtA"
         Me.txtA.Size = New System.Drawing.Size(74, 21)
@@ -171,7 +161,7 @@ Partial Class frmMain
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(7, 212)
+        Me.Label7.Location = New System.Drawing.Point(7, 222)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(58, 15)
@@ -181,7 +171,7 @@ Partial Class frmMain
         '
         'txtM
         '
-        Me.txtM.Location = New System.Drawing.Point(104, 212)
+        Me.txtM.Location = New System.Drawing.Point(104, 223)
         Me.txtM.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtM.Name = "txtM"
         Me.txtM.Size = New System.Drawing.Size(74, 21)
@@ -190,7 +180,9 @@ Partial Class frmMain
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.cbxCotThep)
+        Me.GroupBox1.Controls.Add(Me.txtName)
         Me.GroupBox1.Controls.Add(Me.cbxBeTong)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -204,9 +196,9 @@ Partial Class frmMain
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtA)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 3)
+        Me.GroupBox1.Location = New System.Drawing.Point(182, 56)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 247)
+        Me.GroupBox1.Size = New System.Drawing.Size(186, 247)
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Thông số đầu vào"
@@ -215,7 +207,7 @@ Partial Class frmMain
         '
         Me.cbxCotThep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxCotThep.FormattingEnabled = True
-        Me.cbxCotThep.Location = New System.Drawing.Point(104, 126)
+        Me.cbxCotThep.Location = New System.Drawing.Point(104, 137)
         Me.cbxCotThep.Name = "cbxCotThep"
         Me.cbxCotThep.Size = New System.Drawing.Size(74, 23)
         Me.cbxCotThep.TabIndex = 18
@@ -224,7 +216,7 @@ Partial Class frmMain
         '
         Me.cbxBeTong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbxBeTong.FormattingEnabled = True
-        Me.cbxBeTong.Location = New System.Drawing.Point(104, 95)
+        Me.cbxBeTong.Location = New System.Drawing.Point(104, 106)
         Me.cbxBeTong.Name = "cbxBeTong"
         Me.cbxBeTong.Size = New System.Drawing.Size(74, 23)
         Me.cbxBeTong.TabIndex = 17
@@ -235,9 +227,9 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.txtAs)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtAsPhay)
-        Me.GroupBox2.Location = New System.Drawing.Point(219, 150)
+        Me.GroupBox2.Location = New System.Drawing.Point(374, 203)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(219, 100)
+        Me.GroupBox2.Size = New System.Drawing.Size(170, 100)
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Kết quả"
@@ -283,34 +275,115 @@ Partial Class frmMain
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.PictureBox1)
-        Me.GroupBox3.Location = New System.Drawing.Point(219, 3)
+        Me.GroupBox3.Location = New System.Drawing.Point(374, 56)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(219, 146)
+        Me.GroupBox3.Size = New System.Drawing.Size(170, 146)
         Me.GroupBox3.TabIndex = 19
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Hình minh họa"
         '
+        'lstBxMatCat
+        '
+        Me.lstBxMatCat.FormattingEnabled = True
+        Me.lstBxMatCat.ItemHeight = 15
+        Me.lstBxMatCat.Location = New System.Drawing.Point(10, 72)
+        Me.lstBxMatCat.Name = "lstBxMatCat"
+        Me.lstBxMatCat.Size = New System.Drawing.Size(166, 229)
+        Me.lstBxMatCat.TabIndex = 20
+        Me.lstBxMatCat.Tag = ""
+        '
+        'tsMain
+        '
+        Me.tsMain.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.tsMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsRun})
+        Me.tsMain.Location = New System.Drawing.Point(0, 0)
+        Me.tsMain.Name = "tsMain"
+        Me.tsMain.Size = New System.Drawing.Size(573, 32)
+        Me.tsMain.TabIndex = 21
+        Me.tsMain.Text = "ToolStrip1"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(9, 46)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(109, 15)
+        Me.Label10.TabIndex = 23
+        Me.Label10.Text = "Danh sách mặt cắt"
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Image = Global.TinhCotThepDam.My.Resources.Resources.icons8_add_32
+        Me.btnAdd.Location = New System.Drawing.Point(126, 41)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(25, 25)
+        Me.btnAdd.TabIndex = 22
+        Me.ToolTip1.SetToolTip(Me.btnAdd, "Thêm mặt cắt dầm")
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'tsRun
+        '
+        Me.tsRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsRun.Image = CType(resources.GetObject("tsRun.Image"), System.Drawing.Image)
+        Me.tsRun.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsRun.Name = "tsRun"
+        Me.tsRun.Size = New System.Drawing.Size(29, 29)
+        Me.tsRun.Text = "ToolStripButton1"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.TinhCotThepDam.My.Resources.Resources.jpg
-        Me.PictureBox1.Location = New System.Drawing.Point(65, 20)
+        Me.PictureBox1.Location = New System.Drawing.Point(45, 36)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(88, 98)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'btnXoa
+        '
+        Me.btnXoa.Image = Global.TinhCotThepDam.My.Resources.Resources.icons8_delete_48
+        Me.btnXoa.Location = New System.Drawing.Point(151, 41)
+        Me.btnXoa.Name = "btnXoa"
+        Me.btnXoa.Size = New System.Drawing.Size(25, 25)
+        Me.btnXoa.TabIndex = 24
+        Me.ToolTip1.SetToolTip(Me.btnXoa, "Xóa mặt cắt dầm")
+        Me.btnXoa.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(7, 26)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(71, 15)
+        Me.Label11.TabIndex = 26
+        Me.Label11.Text = "Tên mặt cắt"
+        '
+        'txtName
+        '
+        Me.txtName.Location = New System.Drawing.Point(104, 26)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(74, 21)
+        Me.txtName.TabIndex = 25
+        Me.txtName.Text = "MC-1"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(449, 290)
+        Me.ClientSize = New System.Drawing.Size(573, 321)
+        Me.Controls.Add(Me.btnXoa)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.btnAdd)
+        Me.Controls.Add(Me.tsMain)
+        Me.Controls.Add(Me.lstBxMatCat)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btnExit)
-        Me.Controls.Add(Me.btnTinhToan)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
@@ -323,17 +396,17 @@ Partial Class frmMain
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
+        Me.tsMain.ResumeLayout(False)
+        Me.tsMain.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnTinhToan As Button
     Friend WithEvents txtBeRong As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtChieuCao As TextBox
-    Friend WithEvents btnExit As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -352,4 +425,13 @@ Partial Class frmMain
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents cbxCotThep As ComboBox
     Friend WithEvents cbxBeTong As ComboBox
+    Friend WithEvents lstBxMatCat As ListBox
+    Friend WithEvents tsMain As ToolStrip
+    Friend WithEvents tsRun As ToolStripButton
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnXoa As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
